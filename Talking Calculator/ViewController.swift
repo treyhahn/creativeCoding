@@ -28,6 +28,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     var myVolume: Float = 1
     let mySpeechSynth = AVSpeechSynthesizer()
     
+    var speakSymbol = ""
+    
     //MARK: Dataset
     var langCodeAll38 = [
         ("ar-SA","Arabic","Saudi Arabia","العربية","🇸🇦"),
@@ -232,6 +234,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         mySpeechSynth.speakUtterance(myUtterance)
     }
 
+    func speakThisSymbol() {
+        mySpeechSynth.stopSpeakingAtBoundary(AVSpeechBoundary.Immediate)
+        let myUtterance = AVSpeechUtterance(string: speakSymbol)
+        myUtterance.rate = myRate
+        myUtterance.pitchMultiplier = myPitch
+        myUtterance.volume = myVolume
+        myUtterance.voice = AVSpeechSynthesisVoice(language: myLanguage.0)
+        mySpeechSynth.speakUtterance(myUtterance)
+    }
     
     //MARK: Calculator Functions
     
@@ -271,35 +282,23 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         valueString = ""
         label.text = "0"
         lastButtonWasMode = false
-        if true {
-            speakThisPhrase("clear")
-        } else {
-        speakThisString()
-        }
+        speakSymbol = "Clear"
+        speakThisSymbol()
     }
     @IBAction func tappedPlus(sender: AnyObject) {
         self.doMode(1)
-        if true {
-            speakThisPhrase("plus")
-        } else {
-            speakThisString()
-        }
+        speakSymbol = "Plus"
+        speakThisSymbol()
     }
     @IBAction func tappedMinus(sender: AnyObject) {
         self.doMode(-1)
-        if true {
-            speakThisPhrase("minus")
-        } else {
-            speakThisString()
-        }
+        speakSymbol = "Minus"
+        speakThisSymbol()
     }
     @IBAction func tappedMultiply(sender: UIButton) {
         doMode(2)
-        if true {
-            speakThisPhrase("times")
-        } else {
-            speakThisString()
-        }
+        speakSymbol = "Times"
+        speakThisSymbol()
     }
     @IBAction func tappedEquals(sender: AnyObject) {
         if (mode == 0)
