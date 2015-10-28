@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         label.text = "WELCOME!!!!"
-        speakThisPhrase(label.text!)
+        speakThisPhrase("Welcome to World Calc! Select a language and calculate away.")
         myLanguage = englishLang
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -117,7 +117,9 @@ class ViewController: UIViewController {
         wildcard.setTitleColor(UIColor(white: 1, alpha: 1), forState: .Normal)
         myLanguage = portugueseLang
     }
+    
     //MARK: Talking
+    
     func speakThisPhrase(passedString: String){
         let myUtterance = AVSpeechUtterance(string: passedString)
         myUtterance.rate = 0.5
@@ -128,17 +130,8 @@ class ViewController: UIViewController {
         mySpeechSynth.speakUtterance(myUtterance)
         
     }
+    
     //MARK: Calculator Functions
-    @IBAction func tappedMultiply(sender: AnyObject) {
-        doMode(2)
-        if myLanguage == englishLang {
-            speakThisPhrase("times")
-        } else if myLanguage == spanishLang {
-            speakThisPhrase("por")
-        } else if myLanguage == portugueseLang {
-            speakThisPhrase("por")
-        }
-    }
     
     @IBAction func tappedNumber(sender: UIButton) {
         if edgeCaseEquals {
@@ -170,6 +163,20 @@ class ViewController: UIViewController {
         }
         speakThisPhrase(label.text!)
     }
+    @IBAction func tappedClear(sender: AnyObject) {
+        total = 0
+        mode = 0
+        valueString = ""
+        label.text = "0"
+        lastButtonWasMode = false
+        if myLanguage == englishLang {
+            speakThisPhrase("clear")
+        } else if myLanguage == spanishLang {
+            speakThisPhrase("borrar")
+        } else if myLanguage == portugueseLang {
+            speakThisPhrase("deletar")
+        }
+    }
     @IBAction func tappedPlus(sender: AnyObject) {
         self.doMode(1)
         if myLanguage == englishLang {
@@ -188,6 +195,16 @@ class ViewController: UIViewController {
             speakThisPhrase("menos")
         } else if myLanguage == portugueseLang {
             speakThisPhrase("menos")
+        }
+    }
+    @IBAction func tappedMultiply(sender: UIButton) {
+        doMode(2)
+        if myLanguage == englishLang {
+            speakThisPhrase("times")
+        } else if myLanguage == spanishLang {
+            speakThisPhrase("por")
+        } else if myLanguage == portugueseLang {
+            speakThisPhrase("por")
         }
     }
     @IBAction func tappedEquals(sender: AnyObject) {
@@ -224,20 +241,6 @@ class ViewController: UIViewController {
             speakThisPhrase("igual a")
         }
         speakThisPhrase(label.text!)
-    }
-    @IBAction func tappedClear(sender: AnyObject) {
-        total = 0
-        mode = 0
-        valueString = ""
-        label.text = "0"
-        lastButtonWasMode = false
-        if myLanguage == englishLang {
-            speakThisPhrase("clear")
-        } else if myLanguage == spanishLang {
-            speakThisPhrase("borrar")
-        } else if myLanguage == portugueseLang {
-            speakThisPhrase("deletar")
-        }
     }
     
     func doMode (m:Int) {
