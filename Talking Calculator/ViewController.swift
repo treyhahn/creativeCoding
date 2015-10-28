@@ -30,12 +30,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     //MARK: Dataset
     var langCodeAll38 = [
-        ("en-US",  "English", "United States", "American English","🇺🇸"),
         ("ar-SA","Arabic","Saudi Arabia","العربية","🇸🇦"),
         ("cs-CZ", "Czech", "Czech Republic","český","🇨🇿"),
         ("da-DK", "Danish","Denmark","Dansk","🇩🇰"),
         ("de-DE",       "German", "Germany", "Deutsche","🇩🇪"),
         ("el-GR",      "Modern Greek",        "Greece","ελληνική","🇬🇷"),
+        ("en-US",  "English", "United States", "American English","🇺🇸"),
         ("en-AU",     "English",     "Australia","Aussie","🇦🇺"),
         ("en-GB",     "English",     "United Kingdom", "Queen's English","🇬🇧"),
         ("en-IE",      "English",     "Ireland", "Gaeilge","🇮🇪"),
@@ -83,6 +83,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
+        languagePicker.selectRow(5, inComponent: 0, animated: true)
+        
+        
         label.text = "WELCOME!!!!"
         speakThisPhrase("Welcome to World Calc! Select a language and calculate away.")
         // Do any additional setup after loading the view, typically from a nib.
@@ -108,7 +111,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         return myString
     }
-    
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         myLanguage = langCodeAll38[row]
@@ -206,7 +208,28 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         myUtterance.voice = AVSpeechSynthesisVoice(language: myLanguage.0)
         mySpeechSynth.speakUtterance(myUtterance)
         
+    }
+    
+    func speakThisNumber() {
+        mySpeechSynth.stopSpeakingAtBoundary(AVSpeechBoundary.Immediate)
         
+        let myUtterance = AVSpeechUtterance(string: label.text!)
+        myUtterance.rate = myRate
+        myUtterance.pitchMultiplier = myPitch
+        myUtterance.volume = myVolume
+        myUtterance.voice = AVSpeechSynthesisVoice(language: myLanguage.0)
+        mySpeechSynth.speakUtterance(myUtterance)
+    }
+    
+    func speakThisEquals() {
+        mySpeechSynth.stopSpeakingAtBoundary(AVSpeechBoundary.Immediate)
+        
+        let myUtterance = AVSpeechUtterance(string: "Equals " + label.text!)
+        myUtterance.rate = myRate
+        myUtterance.pitchMultiplier = myPitch
+        myUtterance.volume = myVolume
+        myUtterance.voice = AVSpeechSynthesisVoice(language: myLanguage.0)
+        mySpeechSynth.speakUtterance(myUtterance)
     }
 
     
@@ -240,7 +263,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         {
             total = Int(valueString)!
         }
-        speakThisPhrase(label.text!)
+        speakThisNumber()
     }
     @IBAction func tappedClear(sender: AnyObject) {
         total = 0
@@ -304,12 +327,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         label.text = formatter.stringFromNumber(n)
         mode = 0
         edgeCaseEquals = true
-        if true {
-            speakThisPhrase("equals")
-        } else {
-            speakThisString()
-        }
-        speakThisPhrase(label.text!)
+        speakThisEquals()
     }
     
     func doMode (m:Int) {
