@@ -39,12 +39,15 @@
                                     <action selector="wildcard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x2Y-Xn-Bwt"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dVc-WS-R50">
-                                <rect key="frame" x="60" y="408" width="201" height="110"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WELCOME!!!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Kh6-CN-th8">
+                                <rect key="frame" x="36" y="78" width="265" height="46"/>
                                 <animations/>
-                            </pickerView>
+                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="48"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bg-M8-92T">
-                                <rect key="frame" x="166" y="267" width="62" height="55"/>
+                                <rect key="frame" x="166" y="277" width="62" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
@@ -56,7 +59,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voe-R4-Kh1">
-                                <rect key="frame" x="93" y="267" width="62" height="55"/>
+                                <rect key="frame" x="93" y="277" width="62" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
@@ -68,7 +71,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyS-h9-2a3">
-                                <rect key="frame" x="93" y="203" width="62" height="55"/>
+                                <rect key="frame" x="93" y="213" width="62" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
@@ -80,7 +83,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x1-kk-vhr">
-                                <rect key="frame" x="20" y="267" width="62" height="55"/>
+                                <rect key="frame" x="20" y="277" width="62" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
@@ -92,7 +95,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gB5-mt-aod">
-                                <rect key="frame" x="20" y="203" width="62" height="55"/>
+                                <rect key="frame" x="20" y="213" width="62" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
@@ -104,7 +107,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQq-u2-6nb">
-                                <rect key="frame" x="20" y="139" width="62" height="55"/>
+                                <rect key="frame" x="20" y="149" width="62" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
@@ -116,7 +119,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2g-CJ-3bc">
-                                <rect key="frame" x="93" y="139" width="62" height="55"/>
+                                <rect key="frame" x="93" y="149" width="62" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
@@ -128,7 +131,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYz-uN-UG8">
-                                <rect key="frame" x="166" y="139" width="62" height="55"/>
+                                <rect key="frame" x="166" y="149" width="62" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
@@ -140,7 +143,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qe-QQ-Bsg">
-                                <rect key="frame" x="166" y="203" width="62" height="55"/>
+                                <rect key="frame" x="166" y="213" width="62" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
@@ -152,7 +155,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyK-ha-QGG">
-                                <rect key="frame" x="166" y="331" width="62" height="55"/>
+                                <rect key="frame" x="166" y="341" width="62" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="24"/>
@@ -164,7 +167,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPT-6x-Oee">
-                                <rect key="frame" x="20" y="331" width="135" height="55"/>
+                                <rect key="frame" x="20" y="341" width="135" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
@@ -176,7 +179,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rA2-wg-xAn">
-                                <rect key="frame" x="239" y="331" width="62" height="55"/>
+                                <rect key="frame" x="239" y="341" width="62" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
@@ -188,7 +191,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="um0-jU-wvM">
-                                <rect key="frame" x="239" y="267" width="62" height="55"/>
+                                <rect key="frame" x="239" y="277" width="62" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
@@ -200,7 +203,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHa-tU-1ei">
-                                <rect key="frame" x="239" y="203" width="62" height="55"/>
+                                <rect key="frame" x="239" y="213" width="62" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
@@ -212,7 +215,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDQ-YG-X2V">
-                                <rect key="frame" x="239" y="139" width="62" height="55"/>
+                                <rect key="frame" x="239" y="149" width="62" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
@@ -223,13 +226,14 @@
                                     <action selector="tappedPlus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KNt-8i-lm9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WELCOME!!!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kh6-CN-th8">
-                                <rect key="frame" x="36" y="68" width="265" height="46"/>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dVc-WS-R50">
+                                <rect key="frame" x="50" y="408" width="221" height="121"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="48"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0Ur-mv-iCK"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="wuP-L2-bgL"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -237,6 +241,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="label" destination="Kh6-CN-th8" id="SYP-OL-TZZ"/>
+                        <outlet property="languagePicker" destination="dVc-WS-R50" id="5Fo-hL-TIY"/>
                         <outlet property="nighttime" destination="QEN-Uz-DHP" id="vFo-QA-vfZ"/>
                         <outlet property="wildcard" destination="OY2-f7-ZvD" id="3S3-1v-NfZ"/>
                         <outletCollection property="numberCollection" destination="EPT-6x-Oee" collectionClass="NSMutableArray" id="tbo-yX-cbo"/>

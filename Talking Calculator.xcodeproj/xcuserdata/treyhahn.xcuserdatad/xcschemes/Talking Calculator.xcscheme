@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F457817A1BDA812400E52B50"
-               BuildableName = "Talking Calculator.app"
+               BuildableName = "World Calc.app"
                BlueprintName = "Talking Calculator"
                ReferencedContainer = "container:Talking Calculator.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F457817A1BDA812400E52B50"
-            BuildableName = "Talking Calculator.app"
+            BuildableName = "World Calc.app"
             BlueprintName = "Talking Calculator"
             ReferencedContainer = "container:Talking Calculator.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F457817A1BDA812400E52B50"
-            BuildableName = "Talking Calculator.app"
+            BuildableName = "World Calc.app"
             BlueprintName = "Talking Calculator"
             ReferencedContainer = "container:Talking Calculator.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F457817A1BDA812400E52B50"
-            BuildableName = "Talking Calculator.app"
+            BuildableName = "World Calc.app"
             BlueprintName = "Talking Calculator"
             ReferencedContainer = "container:Talking Calculator.xcodeproj">
          </BuildableReference>

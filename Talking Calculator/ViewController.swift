@@ -9,10 +9,10 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate  {
     
     //MARK: - Variables
-    //MARK: General
+    //MARK: Calculator
     var total:Int = 0
     var mode:Int = 0
     var valueString:String! = ""
@@ -21,17 +21,59 @@ class ViewController: UIViewController {
     var daytime:Bool = true
     var edgeCaseEquals = false
     
-    
-    var myLanguage: String = ""
-    let englishLang = "en-US"
-    let spanishLang = "es-MX"
-    let portugueseLang = "pt-BR"
-    
+    //MARK: Speaking
+    var myLanguage = ("en-US", "English","United States","American English ","🇺🇸")
+    var myRate: Float = 0.37
+    var myPitch: Float = 0.85
+    var myVolume: Float = 1
     let mySpeechSynth = AVSpeechSynthesizer()
+    
+    //MARK: Dataset
+    var langCodeAll38 = [
+        ("en-US",  "English", "United States", "American English","🇺🇸"),
+        ("ar-SA","Arabic","Saudi Arabia","العربية","🇸🇦"),
+        ("cs-CZ", "Czech", "Czech Republic","český","🇨🇿"),
+        ("da-DK", "Danish","Denmark","Dansk","🇩🇰"),
+        ("de-DE",       "German", "Germany", "Deutsche","🇩🇪"),
+        ("el-GR",      "Modern Greek",        "Greece","ελληνική","🇬🇷"),
+        ("en-AU",     "English",     "Australia","Aussie","🇦🇺"),
+        ("en-GB",     "English",     "United Kingdom", "Queen's English","🇬🇧"),
+        ("en-IE",      "English",     "Ireland", "Gaeilge","🇮🇪"),
+        ("en-ZA",       "English",     "South Africa", "South African English","🇿🇦"),
+        ("es-ES",       "Spanish",     "Spain", "Español","🇪🇸"),
+        ("es-MX",       "Spanish",     "Mexico", "Español de México","🇲🇽"),
+        ("fi-FI",       "Finnish",     "Finland","Suomi","🇫🇮"),
+        ("fr-CA",       "French",      "Canada","Français du Canada","🇨🇦" ),
+        ("fr-FR",       "French",      "France", "Français","🇫🇷"),
+        ("he-IL",       "Hebrew",      "Israel","עברית","🇮🇱"),
+        ("hi-IN",       "Hindi",       "India", "हिन्दी","🇮🇳"),
+        ("hu-HU",       "Hungarian",    "Hungary", "Magyar","🇭🇺"),
+        ("id-ID",       "Indonesian",    "Indonesia","Bahasa Indonesia","🇮🇩"),
+        ("it-IT",       "Italian",     "Italy", "Italiano","🇮🇹"),
+        ("ja-JP",       "Japanese",     "Japan", "日本語","🇯🇵"),
+        ("ko-KR",       "Korean",      "Republic of Korea", "한국어","🇰🇷"),
+        ("nl-BE",       "Dutch",       "Belgium","Nederlandse","🇧🇪"),
+        ("nl-NL",       "Dutch",       "Netherlands", "Nederlands","🇳🇱"),
+        ("no-NO",       "Norwegian",    "Norway", "Norsk","🇳🇴"),
+        ("pl-PL",       "Polish",      "Poland", "Polski","🇵🇱"),
+        ("pt-BR",       "Portuguese",      "Brazil","Português","🇧🇷"),
+        ("pt-PT",       "Portuguese",      "Portugal","Português","🇵🇹"),
+        ("ro-RO",       "Romanian",        "Romania","Română","🇷🇴"),
+        ("ru-RU",       "Russian",     "Russian Federation","русский","🇷🇺"),
+        ("sk-SK",       "Slovak",      "Slovakia", "Slovenčina","🇸🇰"),
+        ("sv-SE",       "Swedish",     "Sweden","Svenska","🇸🇪"),
+        ("th-TH",       "Thai",        "Thailand","ภาษาไทย","🇹🇭"),
+        ("tr-TR",       "Turkish",     "Turkey","Türkçe","🇹🇷"),
+        ("zh-CN",       "Chinese",     "China","漢語/汉语","🇨🇳"),
+        ("zh-HK",       "Chinese",   "Hong Kong","漢語/汉语","🇭🇰"),
+        ("zh-TW",       "Chinese",     "Taiwan","漢語/汉语","🇹🇼")
+    ]
+    
     //MARK: Buttons
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var nighttime: UIButton!
     @IBOutlet weak var wildcard: UIButton!
+    @IBOutlet weak var languagePicker: UIPickerView!
     
     //MARK: Calculator Buttons
     @IBOutlet var numberCollection: [UIButton]!
@@ -43,7 +85,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         label.text = "WELCOME!!!!"
         speakThisPhrase("Welcome to World Calc! Select a language and calculate away.")
-        myLanguage = englishLang
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -51,6 +92,28 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: Picker View
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return langCodeAll38.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        let myString = "\(langCodeAll38[row].4) \(langCodeAll38[row].3)"
+        
+        return myString
+    }
+    
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        myLanguage = langCodeAll38[row]
+        speakThisString()
+        }
     
     //MARK: Display Modes
     @IBAction func nighttimePressed(sender: UIButton) {
@@ -71,7 +134,7 @@ class ViewController: UIViewController {
             nighttime.setTitle("Nighttime", forState: .Normal)
             nighttime.setTitleColor(UIColor(white: 1, alpha: 1), forState: .Normal)
             wildcard.setTitleColor(UIColor(white: 1, alpha: 1), forState: .Normal)
-            myLanguage = spanishLang
+            languagePicker.backgroundColor = UIColor(white: 1, alpha: 0.5)
             
         } else
         {
@@ -89,7 +152,7 @@ class ViewController: UIViewController {
             nighttime.setTitle("Daytime", forState: .Normal)
             nighttime.setTitleColor(UIColor(white: 0, alpha: 1), forState: .Normal)
             wildcard.setTitleColor(UIColor(white: 0, alpha: 1), forState: .Normal)
-            myLanguage = englishLang
+            languagePicker.backgroundColor = UIColor(white: 1, alpha: 0)
         }
         if (count == true) {
             count = false
@@ -115,21 +178,37 @@ class ViewController: UIViewController {
         nighttime.setTitle("Nighttime", forState: .Normal)
         nighttime.setTitleColor(UIColor(white: 1, alpha: 1), forState: .Normal)
         wildcard.setTitleColor(UIColor(white: 1, alpha: 1), forState: .Normal)
-        myLanguage = portugueseLang
+        
+        languagePicker.backgroundColor = UIColor(white: 1, alpha: 0.5)
     }
     
     //MARK: Talking
     
     func speakThisPhrase(passedString: String){
+        mySpeechSynth.stopSpeakingAtBoundary(AVSpeechBoundary.Immediate)
+        
         let myUtterance = AVSpeechUtterance(string: passedString)
         myUtterance.rate = 0.5
         
-        myUtterance.voice = AVSpeechSynthesisVoice(language: myLanguage)
-        
+        myUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         
         mySpeechSynth.speakUtterance(myUtterance)
         
     }
+    
+    func speakThisString(){
+        mySpeechSynth.stopSpeakingAtBoundary(AVSpeechBoundary.Immediate)
+        
+        let myUtterance = AVSpeechUtterance(string: myLanguage.3)
+        myUtterance.rate = myRate
+        myUtterance.pitchMultiplier = myPitch
+        myUtterance.volume = myVolume
+        myUtterance.voice = AVSpeechSynthesisVoice(language: myLanguage.0)
+        mySpeechSynth.speakUtterance(myUtterance)
+        
+        
+    }
+
     
     //MARK: Calculator Functions
     
@@ -169,42 +248,34 @@ class ViewController: UIViewController {
         valueString = ""
         label.text = "0"
         lastButtonWasMode = false
-        if myLanguage == englishLang {
+        if true {
             speakThisPhrase("clear")
-        } else if myLanguage == spanishLang {
-            speakThisPhrase("borrar")
-        } else if myLanguage == portugueseLang {
-            speakThisPhrase("deletar")
+        } else {
+        speakThisString()
         }
     }
     @IBAction func tappedPlus(sender: AnyObject) {
         self.doMode(1)
-        if myLanguage == englishLang {
+        if true {
             speakThisPhrase("plus")
-        } else if myLanguage == spanishLang {
-            speakThisPhrase("más")
-        } else if myLanguage == portugueseLang {
-            speakThisPhrase("mais")
+        } else {
+            speakThisString()
         }
     }
     @IBAction func tappedMinus(sender: AnyObject) {
         self.doMode(-1)
-        if myLanguage == englishLang {
+        if true {
             speakThisPhrase("minus")
-        } else if myLanguage == spanishLang {
-            speakThisPhrase("menos")
-        } else if myLanguage == portugueseLang {
-            speakThisPhrase("menos")
+        } else {
+            speakThisString()
         }
     }
     @IBAction func tappedMultiply(sender: UIButton) {
         doMode(2)
-        if myLanguage == englishLang {
+        if true {
             speakThisPhrase("times")
-        } else if myLanguage == spanishLang {
-            speakThisPhrase("por")
-        } else if myLanguage == portugueseLang {
-            speakThisPhrase("por")
+        } else {
+            speakThisString()
         }
     }
     @IBAction func tappedEquals(sender: AnyObject) {
@@ -233,12 +304,10 @@ class ViewController: UIViewController {
         label.text = formatter.stringFromNumber(n)
         mode = 0
         edgeCaseEquals = true
-        if myLanguage == englishLang {
+        if true {
             speakThisPhrase("equals")
-        } else if myLanguage == spanishLang {
-            speakThisPhrase("igual a")
-        } else if myLanguage == portugueseLang {
-            speakThisPhrase("igual a")
+        } else {
+            speakThisString()
         }
         speakThisPhrase(label.text!)
     }
