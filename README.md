@@ -14,6 +14,8 @@ Features:
 
 •Day, Night and "Special" modes
 
+View a video demo of the app here![WorldCalcDemoVideo](https://youtu.be/8oj5VEEGex8).
+
 ![WorldCalcScreenshot](https://raw.githubusercontent.com/treyhahn/creativeCoding/master/images/WorldCalcScreenshot.PNG)
 
-![WorldCalcVideo]()
+![WorldCalcDemoGIF](https://raw.githubusercontent.com/treyhahn/creativeCoding/master/images/WorldCalc.gif)
