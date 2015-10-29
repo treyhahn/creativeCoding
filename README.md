@@ -7,5 +7,7 @@ Do you need a calculator that speaks in your language?  This app will make calcu
 
 Features:
 •Make calculations in 38 different languages
+
 •Calculator speaks what you input
+
 •Day, Night and "Special" modes
