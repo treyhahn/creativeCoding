@@ -17,7 +17,7 @@ Do you need a calculator that speaks in your language?  This app will make calcu
 •Day, Night and "Special" modes
 
 View a video demo of the app here: [WorldCalcDemoVideo](https://www.youtube.com/watch?v=0Q7T_gSQ4cc).
-<iframe width="420" height="315" src="https://www.youtube.com/embed/8oj5VEEGex8" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0Q7T_gSQ4cc?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 ![WorldCalcScreenshot](https://raw.githubusercontent.com/treyhahn/creativeCoding/master/images/WorldCalcScreenshot.PNG)
 
 ![WorldCalcDemoGIF](https://raw.githubusercontent.com/treyhahn/creativeCoding/master/images/WorldCalc.gif)
